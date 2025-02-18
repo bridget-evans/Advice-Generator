@@ -1,14 +1,28 @@
-<head>
-  <link rel="shortcut icon" href="favicon.ico">
-</head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Advice Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="quote-box">
+        <div class="quote-content">
+          <div id="advice-num"></div>
+          <div id="quote"></div>
+          <img class="divider" src="pattern-divider-desktop.svg" />
+          <div class="btn-position">
+            <button class="btn" id="getData">
+              <img src="icon-dice.svg" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="container">
-  <div class="quote-box">
-    <p id="advice-num"></p>
-    <p id="quote"></p>
-    <img src="pattern-divider-desktop.svg">
-    <button id="btn"><img src="icon-dice.svg"></button>
-  </div>
-</div><!--container-->
-
-<script src="main.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
