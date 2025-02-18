@@ -1,11 +1,27 @@
-const url = 'https://api.adviceslip.com/advice';
-const adviceNum = document.getElementById("#advice-num");
-const quote = document.getElementById("#quote");
+const url = "https://api.adviceslip.com/advice";
+const adviceNum = document.querySelector("#advice-num");
+const quote = document.querySelector("#quote");
+const getData = document.querySelector("#getData");
 
-async function getData() {
-  const response = await fetch(url);
-  const data = await response.json();
-  console.log(data);
+getData.addEventListener("click", () => {
+  getAdvice();
+});
+
+window.onload = () => {
+  getAdvice();
+};
+
+function getAdvice() {
+  fetch(url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((adviceData) => {
+      const Adviceobj = adviceData.slip;
+      adviceNum.innerHTML = `<p>ADVICE #${Adviceobj.id}</p>`;
+      quote.innerHTML = `<p>"${Adviceobj.advice}"</p>`;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
-
-getData();
